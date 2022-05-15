@@ -71,20 +71,21 @@ public class PlayerController : EntityController
         if(entity.isDead || !canShoot) return;
         if(Input.GetButtonDown("Fire1"))
         {
-            if(!EventSystem.current.IsPointerOverGameObject())
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
                 var mousePosition = Input.mousePosition;
                 mousePosition.z = 10;
                 var targetPos = Camera.main.ScreenToWorldPoint(mousePosition);
                 var originPos = Camera.main.transform.position;
-                if(Physics.Raycast(originPos, targetPos - originPos, out RaycastHit hit, shootMask))
+                if (Physics.Raycast(originPos, targetPos - originPos, out RaycastHit hit, shootMask))
                 {
 
                     var bullet = bulletPool.GetPoolBullet();
-                    bullet.Shoot(bulletExe.position,hit.point);
+                    bullet.Shoot(bulletExe.position, hit.point);
 
                 }
             }
+           
         }
     }
 }
