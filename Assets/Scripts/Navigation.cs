@@ -11,6 +11,7 @@ public class Navigation : MonoBehaviour
     public NavPoint point;
     
     [HideInInspector]public Entity entity;
+    public PlayerController controller;
     [SerializeField]
     private NavMeshAgent agent;
     public bool isRotating = false;
@@ -35,12 +36,14 @@ public class Navigation : MonoBehaviour
             entity.controller.OnPathEnd();
             return;
         }
+        controller.gameCanvas.SetActive(false);
         point = path[pathIndex];
         pathIndex++;
         isRotating = false;
         agent.destination = point.transform.position;
         isMoving = true;
         
+      
 
     }
 
@@ -69,6 +72,7 @@ public class Navigation : MonoBehaviour
             if(distance <= 0.2)
             {
                 isMoving = false;
+                controller.gameCanvas.SetActive(true);
                 if (point.waitTime > 0)
                 {
                     StartCoroutine(waitOnPoint(point.waitTime));

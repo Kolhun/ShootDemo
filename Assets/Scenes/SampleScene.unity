@@ -6442,6 +6442,7 @@ MonoBehaviour:
   pathIndex: 0
   point: {fileID: 0}
   entity: {fileID: 714860040}
+  controller: {fileID: 714860037}
   agent: {fileID: 714860035}
   isRotating: 0
 --- !u!195 &714860035
@@ -11225,7 +11226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15356
+  m_Name: pb_Mesh15478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
